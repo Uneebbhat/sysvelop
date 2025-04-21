@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Mobile App Development",
+    "image": "/mobile-app-dev.jpg"
+  },
+  {
+    "title": "UI/UX Design",
+    "image": "/ui-ux-design.jpg"
+  },
+  {
+    "title": "Website Development",
+    "image": "/web-dev.jpg"
+  },
+  {
+    "title": "Custom Software Development",
+    "image": "/custom-software-dev.jpg"
+  },
+  {
+    "title": "MS D365 CRM",
+    "image": "/crm.jpg"
+  },
+  {
+    "title": "Cloud Application",
+    "image": "/cloud-app.jpg"
+  },
+  {
+    "title": "Game Development",
+    "image": "/game-dev.jpg"
+  },
+  {
+    "title": "SaaS Development",
+    "image": "/saas-dev.jpg"
+  },
+  {
+    "title": "E-commerce Development",
+    "image": "/e-commerce-dev.jpg"
+  },
+  {
+    "title": "Design & Development",
+    "image": "/design-dev.jpg"
+  },
+  {
+    "title": "Maintenance & Support",
+    "image": "/maintenance.jpg"
+  },
+  {
+    "title": "Automation",
+    "image": "/automation.jpg"
+  }
+]

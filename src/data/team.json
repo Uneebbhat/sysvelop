@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "image": "/abdullah.jpeg",
+    "name": "Abdullah",
+    "role": "Founder & Senior Developer",
+    "linkedin": "https://www.linkedin.com/in/mabdullahsablootlopk/"
+  },
+  {
+    "id": 2,
+    "image": "/uneeb.jpeg",
+    "name": "Uneeb Bhatti",
+    "role": "CEO & Senior Developer",
+    "linkedin": "https://www.linkedin.com/in/uneeb-bhatti/"
+  },
+  {
+    "id": 3,
+    "image": "/fadil.jpeg",
+    "name": "Fadil Tanveer",
+    "role": "Marketing Manager",
+    "linkedin": "https://www.linkedin.com/in/uneeb-bhatti/"
+  },
+  {
+    "id": 4,
+    "image": "/abdullah-khan.jpeg",
+    "name": "Abdullah Khan",
+    "role": "Marketing Manager",
+    "linkedin": "https://www.linkedin.com/in/uneeb-bhatti/"
+  },
+  {
+    "id": 5,
+    "image": "/agha.jpeg",
+    "name": "Agha Essa Khan",
+    "role": "Software Engineer",
+    "linkedin": "https://www.linkedin.com/in/uneeb-bhatti/"
+  }
+]
