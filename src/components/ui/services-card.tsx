@@ -11,7 +11,7 @@ const ServicesCard: FC<ServicesCardProps> = ({ title, image }) => {
     <>
       <div className="relative overflow-hidden rounded-lg group">
         <div className="absolute top-[20px] left-[20px] z-20">
-          <h3 className="text-white text-2xl font-semibold">{title}</h3>
+          <h3 className="text-white text-xl font-semibold">{title}</h3>
         </div>
         <div className="w-full h-[400px] relative">
           <Image

@@ -136,3 +136,15 @@
     @apply content-[''] absolute -bottom-[3px] left-0 w-full h-[1px] bg-black;
   }
 }
+
+.services-checkbox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+@media screen and (max-width: 570px) {
+  .services-checkbox {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

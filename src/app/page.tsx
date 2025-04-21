@@ -3,6 +3,7 @@ import ServicesCard from "@/components/ui/services-card";
 import TeamCard from "@/components/ui/team-card";
 import services from "@/data/services.json";
 import team from "@/data/team.json";
+import ContactForm from "@/components/ContactForm";
 
 interface TeamCardProps {
   id: number;
@@ -88,9 +89,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="team-members">
+      <section id="team-members" className="bg-[#F6F6F6] p-[20px] md:p-[80px]">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+          <div className="flex flex-col gap-[10px]">
+            <p className="text-blue-500">MEET OUR TEAM</p>
+            <h2 className="text-[40px] font-bold">
+              People Behind the Succcess
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px] mt-8">
             {team.map((item: TeamCardProps) => (
               <TeamCard
                 id={item.id}
@@ -101,6 +108,23 @@ export default function Home() {
                 key={item.id}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-form" className="p-[20px] md:p-[80px]">
+        <div className="container mx-auto flex flex-col gap-[20px] md:flex-row">
+          <div className="w-full md:w-1/2">
+            <h2 className="text-[40px] font-bold text-blue-500">
+              Ready To Get Started
+            </h2>
+            <p>
+              Connect with us to explore how we can deliver exceptional IT
+              solutions for your needs.
+            </p>
+          </div>
+          <div>
+            <ContactForm />
           </div>
         </div>
       </section>

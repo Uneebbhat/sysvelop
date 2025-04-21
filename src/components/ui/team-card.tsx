@@ -13,7 +13,7 @@ interface TeamCardProps {
 const TeamCard: FC<TeamCardProps> = ({ id, image, name, role, linkedin }) => {
   return (
     <div
-      className="relative overflow-hidden rounded-xl shadow-lg group transform transition duration-300 hover:-translate-y-2 hover:shadow-xl w-[300px] h-[550px]"
+      className="relative overflow-hidden rounded-xl shadow-lg group transform transition duration-300 hover:-translate-y-2 hover:shadow-xl w-full md:w-[300px] h-[550px]"
       key={id}
     >
       <div className="w-full h-[450px] relative">
