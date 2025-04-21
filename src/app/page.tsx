@@ -4,6 +4,14 @@ import TeamCard from "@/components/ui/team-card";
 import services from "@/data/services.json";
 import team from "@/data/team.json";
 
+interface TeamCardProps {
+  id: number;
+  image: string;
+  name: string;
+  role: string;
+  linkedin: string;
+}
+
 export default function Home() {
   return (
     <>
@@ -83,7 +91,7 @@ export default function Home() {
       <section id="team-members">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
-            {team.map((item: any) => (
+            {team.map((item: TeamCardProps) => (
               <TeamCard
                 id={item.id}
                 image={item.image}

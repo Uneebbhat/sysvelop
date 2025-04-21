@@ -111,7 +111,7 @@ const Header: FC = () => {
             </nav>
 
             <div className="hidden md:block">
-              <Button className="primary">Let's talk.</Button>
+              <Button className="primary">Let&apos;s talk.</Button>
             </div>
           </div>
         </Container>
