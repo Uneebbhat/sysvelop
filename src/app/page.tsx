@@ -189,7 +189,7 @@ export default function Home() {
                   <path d="M7.17 6A5.24 5.24 0 002 11.41V18a1 1 0 001 1h6a1 1 0 001-1v-5.83A5.24 5.24 0 007.17 6zm10 0A5.24 5.24 0 0012 11.41V18a1 1 0 001 1h6a1 1 0 001-1v-5.83A5.24 5.24 0 0017.17 6z" />
                 </svg>
                 <p className="text-gray-700 text-base mb-6">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </p>
                 <div className="text-sm font-medium text-gray-900">
                   {testimonial.name}
