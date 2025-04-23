@@ -1,30 +1,43 @@
 import Button from "@/components/ui/button";
 import ServicesCard from "@/components/ui/services-card";
-import TeamCard from "@/components/ui/team-card";
-import services from "@/data/services.json";
-import team from "@/data/team.json";
 import ContactForm from "@/components/ContactForm";
+import services from "@/data/services.json";
+import testimonials from "@/data/testimonials.json";
+import processSteps from "@/data/processSteps.json";
+import features from "@/data/features.json";
+import { JSX } from "react";
+import { Check, Clock, FileText, Menu, Plus, Repeat } from "lucide-react";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
-interface TeamCardProps {
-  id: number;
-  image: string;
-  name: string;
-  role: string;
-  linkedin: string;
-}
+const iconMap: Record<string, JSX.Element> = {
+  checkmark: <Check className="w-10 h-10" />,
+  menu: <Menu className="w-10 h-10" />,
+  document: <FileText className="w-10 h-10" />,
+  clock: <Clock className="w-10 h-10" />,
+  plus: <Plus className="w-10 h-10" />,
+  "arrow-loop": <Repeat className="w-10 h-10" />,
+};
 
 export default function Home() {
   return (
     <>
       <main className="text-center min-h-[calc(100vh-96px)] flex flex-col items-center justify-center px-[20px] md:px-[80px] container mx-auto">
-        <h1 className="font-bold leading-tight text-[clamp(3rem,10vw,5rem)]">
-          WE ENGINEER
-          <br />
-          DIGITAL FUTURES
+        <h1 className="font-bold leading-tight text-[clamp(2rem,10vw,5rem)]">
+          <TextAnimate animation="blurInUp" by="character" once>
+            WE ENGINEER
+          </TextAnimate>
+          <TextAnimate animation="blurInUp" by="character" once>
+            DIGITAL FUTURE
+          </TextAnimate>
         </h1>
-        <p className="text-base sm:text-lg md:text-xl lg:text-[22px] max-w-full md:max-w-[600px] mt-4">
-          Sysvelop is a boundary-pushing tech & design collective transforming
-          visions into world-class digital products.
+
+        <p className="text-base sm:text-lg md:text-xl lg:text-[22px] max-w-full md:max-w-[800px] mt-4">
+          <TextAnimate animation="blurInUp" by="character" once delay={0.5}>
+            Sysvelop is a boundary-pushing tech & design collective transforming
+          </TextAnimate>
+          <TextAnimate animation="blurInUp" by="character" once delay={0.5}>
+            visions into world-class digital products.
+          </TextAnimate>
         </p>
       </main>
 
@@ -89,24 +102,100 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="team-members" className="bg-[#F6F6F6] p-[20px] md:p-[80px]">
+      <section id="process" className="bg-[#F6F6F6] p-[20px] md:p-[80px]">
         <div className="container mx-auto">
-          <div className="flex flex-col gap-[10px]">
-            <p className="text-blue-500">MEET OUR TEAM</p>
-            <h2 className="text-[40px] font-bold">
-              People Behind the Succcess
+          <div>
+            <p className="text-sm uppercase text-blue-500 font-semibold mb-2">
+              Our Process
+            </p>
+            <h2 className="text-4xl md:text-5xl font-extrabold">
+              How We Work at Sysvelop
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px] mt-8">
-            {team.map((item: TeamCardProps) => (
-              <TeamCard
-                id={item.id}
-                image={item.image}
-                linkedin={item.linkedin}
-                name={item.name}
-                role={item.role}
-                key={item.id}
-              />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left mt-6">
+            {processSteps.map((step) => (
+              <div
+                key={step.step}
+                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition"
+              >
+                <div className="text-blue-600 mb-4">
+                  <svg
+                    className="w-10 h-10"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d={step.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-2">
+                  {step.step}. {step.title}
+                </h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="features" className="p-[20px] md:p-[80px]">
+        <div className="container mx-auto">
+          <p className="text-sm uppercase tracking-widest text-blue-600 font-semibold mb-2">
+            Why Choose Sysvelop
+          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12">
+            What Makes Us Different
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className={`bg-${feature.bgColor} p-8 rounded-2xl shadow hover:shadow-md transition`}
+              >
+                <div className="text-blue-600 mb-4">
+                  {iconMap[feature.icon]}
+                </div>
+                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" className="bg-[#F6F6F6] p-[20px] md:p-[80px]">
+        <div className="container mx-auto">
+          <p className="text-sm uppercase tracking-widest text-blue-500 font-semibold mb-2">
+            Testimonials
+          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-12">
+            See what our clients say about us
+          </h2>
+
+          <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300"
+              >
+                <svg
+                  className="w-8 h-8 text-blue-500 mb-4 mx-auto"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7.17 6A5.24 5.24 0 002 11.41V18a1 1 0 001 1h6a1 1 0 001-1v-5.83A5.24 5.24 0 007.17 6zm10 0A5.24 5.24 0 0012 11.41V18a1 1 0 001 1h6a1 1 0 001-1v-5.83A5.24 5.24 0 0017.17 6z" />
+                </svg>
+                <p className="text-gray-700 text-base mb-6">
+                  "{testimonial.quote}"
+                </p>
+                <div className="text-sm font-medium text-gray-900">
+                  {testimonial.name}
+                </div>
+                <div className="text-sm text-gray-500">{testimonial.role}</div>
+              </div>
             ))}
           </div>
         </div>

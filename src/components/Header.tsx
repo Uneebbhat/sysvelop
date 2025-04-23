@@ -29,8 +29,8 @@ const Header: FC = () => {
     },
     {
       id: 3,
-      label: "Services",
-      href: "/services",
+      label: "Portfolio",
+      href: "/portfolio",
     },
     {
       id: 4,

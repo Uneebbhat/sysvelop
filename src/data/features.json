@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Client-Centric Approach",
+    "description": "We tailor every solution to meet your business goals, ensuring transparency, alignment, and satisfaction.",
+    "icon": "checkmark",
+    "bgColor": "white"
+  },
+  {
+    "title": "Full-Stack Expertise",
+    "description": "From UX design to backend architecture, our seasoned team delivers end-to-end digital solutions with precision.",
+    "icon": "menu",
+    "bgColor": "white"
+  },
+  {
+    "title": "Transparent Communication",
+    "description": "You’re always in the loop. We maintain clear, regular communication throughout the entire project lifecycle.",
+    "icon": "document",
+    "bgColor": "white"
+  },
+  {
+    "title": "On-Time Delivery",
+    "description": "We value your time. Every milestone is delivered punctually without compromising on quality.",
+    "icon": "clock",
+    "bgColor": "white"
+  },
+  {
+    "title": "Agile & Scalable",
+    "description": "Our development process is agile and adaptive, ready to scale with your business as it grows.",
+    "icon": "plus",
+    "bgColor": "white"
+  },
+  {
+    "title": "Ongoing Support",
+    "description": "Post-launch, we remain your tech partner—offering support, updates, and growth-driven improvements.",
+    "icon": "arrow-loop",
+    "bgColor": "white"
+  }
+]
