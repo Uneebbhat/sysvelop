@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Button from "@/components/ui/button";
 import ServicesCard from "@/components/ui/services-card";
 import ContactForm from "@/components/ContactForm";
@@ -8,6 +11,8 @@ import features from "@/data/features.json";
 import { JSX } from "react";
 import { Check, Clock, FileText, Menu, Plus, Repeat } from "lucide-react";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import Image from "next/image";
+import ClientsSlider from "@/components/ClientsSlider";
 
 const iconMap: Record<string, JSX.Element> = {
   checkmark: <Check className="w-10 h-10" />,
@@ -19,6 +24,15 @@ const iconMap: Record<string, JSX.Element> = {
 };
 
 export default function Home() {
+  const clients = [
+    { name: "Service", img: "/service.png" },
+    { name: "Bata", img: "/bata.png" },
+    { name: "Khaadi", img: "/khaadi.png" },
+    { name: "MakkiTV", img: "/mk-tv.png" },
+    { name: "Edhi Foundation", img: "/edhi.png" },
+    { name: "Cart", img: "/cart.png" },
+  ];
+
   return (
     <>
       <main className="text-center min-h-[calc(100vh-96px)] flex flex-col items-center justify-center px-[20px] md:px-[80px] container mx-auto">
@@ -40,6 +54,12 @@ export default function Home() {
           </TextAnimate>
         </p>
       </main>
+
+      <section id="clients" className="p-[20px] md:p-[80px]">
+        <div className="container mx-auto">
+          <ClientsSlider />
+        </div>
+      </section>
 
       <section id="our-services" className="bg-[#F6F6F6] p-[20px] md:p-[80px]">
         <div className="container mx-auto">
