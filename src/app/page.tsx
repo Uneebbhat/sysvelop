@@ -1,5 +1,3 @@
-"use client";
-
 import Button from "@/components/ui/button";
 import ServicesCard from "@/components/ui/services-card";
 import ContactForm from "@/components/ContactForm";
