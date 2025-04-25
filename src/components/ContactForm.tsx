@@ -214,7 +214,7 @@ const ContactForm = () => {
             />
 
             {/* Submit */}
-            <Button type="submit" className="primary">
+            <Button type="submit" className="primary w-full">
               Submit Project
             </Button>
           </form>

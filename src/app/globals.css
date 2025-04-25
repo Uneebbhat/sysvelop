@@ -121,11 +121,11 @@
   }
 
   .primary {
-    @apply bg-[#003AFC] px-[24px] py-[12px] rounded-full text-white cursor-pointer flex items-center gap-[10px];
+    @apply bg-[#003AFC] px-[24px] py-[12px] rounded-full text-white cursor-pointer flex items-center justify-between gap-[10px];
   }
 
   .secondary {
-    @apply text-[#003AFC] px-[24px] py-[12px] rounded-full bg-white cursor-pointer flex items-center gap-[10px];
+    @apply text-[#003AFC] px-[24px] py-[12px] rounded-full bg-white cursor-pointer flex items-center justify-between gap-[10px];
   }
 
   .outline {
