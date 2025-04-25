@@ -81,7 +81,7 @@ const Header: FC = () => {
 
             {/* Mobile Navigation */}
             <nav
-              className={`md:hidden fixed top-0 left-0 w-full h-screen bg-white transition-all duration-300 ${
+              className={`md:hidden fixed top-0 left-0 w-full z-20 h-screen bg-white transition-all duration-300 ${
                 isMenuOpen ? "translate-x-0" : "-translate-x-full"
               }`}
             >
