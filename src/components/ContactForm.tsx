@@ -1,26 +1,26 @@
 "use client";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
-import Button from "./ui/button";
+// import { useForm } from "react-hook-form";
+// import { zodResolver } from "@hookform/resolvers/zod";
+// import * as z from "zod";
+// import {
+//   Form,
+//   FormField,
+//   FormItem,
+//   FormLabel,
+//   FormControl,
+//   FormMessage,
+// } from "@/components/ui/form";
+// import { Input } from "@/components/ui/input";
+// import { Textarea } from "@/components/ui/textarea";
+// import { Checkbox } from "@/components/ui/checkbox";
+// import {
+//   Select,
+//   SelectTrigger,
+//   SelectValue,
+//   SelectContent,
+//   SelectItem,
+// } from "@/components/ui/select";
+// import Button from "./ui/button";
 
 const services = [
   "Mobile App Development",
@@ -37,14 +37,14 @@ const services = [
   "Automation",
 ] as const;
 
-const formSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Invalid email"),
-  phone: z.string().min(10, "Phone number is required"),
-  budget: z.string().min(1, "Budget is required"),
-  services: z.array(z.enum(services)),
-  details: z.string().min(10, "Project details are required"),
-});
+// const formSchema = z.object({
+//   name: z.string().min(2, "Name is required"),
+//   email: z.string().email("Invalid email"),
+//   phone: z.string().min(10, "Phone number is required"),
+//   budget: z.string().min(1, "Budget is required"),
+//   services: z.array(z.enum(services)),
+//   details: z.string().min(10, "Project details are required"),
+// });
 
 const ContactForm = () => {
   // const form = useForm<z.infer<typeof formSchema>>({
