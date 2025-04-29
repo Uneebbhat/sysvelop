@@ -2,13 +2,16 @@ import { dbConnect } from "@/config/dbConnect";
 import Blog from "@/models/BlogModel.model";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { blogId: string } }
-) {
+interface RouteParams {
+  params: {
+    blogId: string;
+  };
+}
+
+export async function GET(request: NextRequest, params: RouteParams) {
   await dbConnect();
 
-  const blogId = params.blogId;
+  const blogId = params.params.blogId;
 
   try {
     const getBlogById = await Blog.findOne({ _id: blogId });
