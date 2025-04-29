@@ -2,7 +2,7 @@ import { dbConnect } from "@/config/dbConnect";
 import Blog from "@/models/BlogModel.model";
 import { NextResponse } from "next/server";
 
-export async function GET(
+export default async function GET(
   req: Request,
   { params }: { params: { blogId: string } }
 ) {
