@@ -1,14 +1,14 @@
 import { dbConnect } from "@/config/dbConnect";
 import Blog from "@/models/BlogModel.model";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export default async function GET(
-  req: Request,
-  { params }: { params: { blogId: string } }
+export async function GET(
+  req: NextRequest,
+  context: { params: { blogId: string } }
 ) {
   await dbConnect();
 
-  const blogId = params.blogId;
+  const blogId = context.params.blogId;
 
   try {
     const getBlogById = await Blog.findOne({ _id: blogId });
