@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { NextResponse } from "next/server";
 
 console.log(process.env.MONGODB_URI);
 
@@ -12,7 +13,17 @@ export const dbConnect = async () => {
     }
     const conn = await mongoose.connect(process.env.MONGODB_URI!);
     console.log(`✅ MongoDB connected: ${conn.connection.host}`);
-  } catch (error: any) {
-    console.log("Something went wrong", error);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { error: `Internal Server Error: ${error.message}` },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json(
+      { error: "An unexpected error occurred." },
+      { status: 500 }
+    );
   }
 };
