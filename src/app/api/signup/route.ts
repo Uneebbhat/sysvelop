@@ -35,10 +35,17 @@ export async function POST(req: Request) {
       { message: "Account created successfully", data: newUser },
       { status: 201 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { error: `Internal Server Error: ${error.message}` },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json(
-      { error: `Internal Server Error: ${error}` },
-      { status: 5000 }
+      { error: "An unexpected error occurred." },
+      { status: 500 }
     );
   }
 }

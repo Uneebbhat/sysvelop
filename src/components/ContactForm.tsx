@@ -22,20 +22,20 @@
 // } from "@/components/ui/select";
 // import Button from "./ui/button";
 
-const services = [
-  "Mobile App Development",
-  "UI/UX Design",
-  "Website Development",
-  "Custom Software Development",
-  "MS D365 CRM",
-  "Cloud Application Development",
-  "Game Development",
-  "SaaS Development",
-  "E-commerce Development",
-  "Design & Development",
-  "Maintenance & Support",
-  "Automation",
-] as const;
+// const services = [
+//   "Mobile App Development",
+//   "UI/UX Design",
+//   "Website Development",
+//   "Custom Software Development",
+//   "MS D365 CRM",
+//   "Cloud Application Development",
+//   "Game Development",
+//   "SaaS Development",
+//   "E-commerce Development",
+//   "Design & Development",
+//   "Maintenance & Support",
+//   "Automation",
+// ] as const;
 
 // const formSchema = z.object({
 //   name: z.string().min(2, "Name is required"),

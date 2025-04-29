@@ -19,7 +19,7 @@ export async function GET() {
       },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json(
       { error: `Internal Server Error: ${error}` },
       { status: 500 }
@@ -51,9 +51,16 @@ export async function POST(req: Request) {
       { message: "Blog created successfully", data: newBlog },
       { status: 201 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { error: `Internal Server Error: ${error.message}` },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json(
-      { error: `Internal Server Error: ${error}` },
+      { error: "An unexpected error occurred." },
       { status: 500 }
     );
   }

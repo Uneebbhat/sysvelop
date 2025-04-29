@@ -1,5 +1,10 @@
 import PageLayout from "@/layout/PageLayout";
+import { ReactNode } from "react";
 
-export default function Layout({ children }: any) {
+interface ContactLayoutProps {
+  children: ReactNode;
+}
+
+export default function Layout({ children }: ContactLayoutProps) {
   return <PageLayout>{children}</PageLayout>;
 }

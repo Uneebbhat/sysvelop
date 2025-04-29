@@ -1,5 +1,10 @@
 import PageLayout from "@/layout/PageLayout";
+import { ReactNode } from "react";
 
-export default function Layout({ children }: any) {
+interface PortfolioLayoutProps {
+  children: ReactNode;
+}
+
+export default function Layout({ children }: PortfolioLayoutProps) {
   return <PageLayout>{children}</PageLayout>;
 }

@@ -23,9 +23,16 @@ export async function GET(
       { message: "Blog found", data: getBlogById },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { error: `Internal Server Error: ${error.message}` },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json(
-      { error: `Internal Server Error: ${error}` },
+      { error: "An unexpected error occurred." },
       { status: 500 }
     );
   }

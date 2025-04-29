@@ -3,16 +3,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface IBlog {
-  _id: string;
-  authorId: string;
-  title: string;
-  tags: string[];
-  description: string;
-  content: string;
-}
-[];
-
 const useGetAllBlogs = () => {
   const [blogs, setBlogs] = useState([]);
 

@@ -14,76 +14,24 @@ import Image from "next/image";
 import Link from "next/link";
 import useGetAllBlogs from "@/hooks/useGetAllBlogs";
 
-const BlogCard = () => {
-  // const blogblog = [
-  //   {
-  //     id: 1,
-  //     title: "The Future of Web Development in 2025",
-  //     description:
-  //       "Exploring trends, tools, and technologies that will shape the web development landscape in the coming years.",
-  //     content:
-  //       "Stay ahead of the curve by learning about AI integrations, serverless architecture, and the rise of Jamstack in modern web development.",
-  //     date: "April 25, 2025",
-  //     image: "/web.png",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "The Future of Web Development in 2025",
-  //     description:
-  //       "Exploring trends, tools, and technologies that will shape the web development landscape in the coming years.",
-  //     content:
-  //       "Stay ahead of the curve by learning about AI integrations, serverless architecture, and the rise of Jamstack in modern web development.",
-  //     date: "April 25, 2025",
-  //     image: "/web.png",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "The Future of Web Development in 2025",
-  //     description:
-  //       "Exploring trends, tools, and technologies that will shape the web development landscape in the coming years.",
-  //     content:
-  //       "Stay ahead of the curve by learning about AI integrations, serverless architecture, and the rise of Jamstack in modern web development.",
-  //     date: "April 25, 2025",
-  //     image: "/web.png",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "The Future of Web Development in 2025",
-  //     description:
-  //       "Exploring trends, tools, and technologies that will shape the web development landscape in the coming years.",
-  //     content:
-  //       "Stay ahead of the curve by learning about AI integrations, serverless architecture, and the rise of Jamstack in modern web development.",
-  //     date: "April 25, 2025",
-  //     image: "/web.png",
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "The Future of Web Development in 2025",
-  //     description:
-  //       "Exploring trends, tools, and technologies that will shape the web development landscape in the coming years.",
-  //     content:
-  //       "Stay ahead of the curve by learning about AI integrations, serverless architecture, and the rise of Jamstack in modern web development.",
-  //     date: "April 25, 2025",
-  //     image: "/web.png",
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "The Future of Web Development in 2025",
-  //     description:
-  //       "Exploring trends, tools, and technologies that will shape the web development landscape in the coming years.",
-  //     content:
-  //       "Stay ahead of the curve by learning about AI integrations, serverless architecture, and the rise of Jamstack in modern web development.",
-  //     date: "April 25, 2025",
-  //     image: "/web.png",
-  //   },
-  // ];
+interface IBlog {
+  _id: string;
+  authorId: string;
+  title: string;
+  tags: string[];
+  description: string;
+  content: string;
+  createdAt: Date;
+}
+[];
 
+const BlogCard = () => {
   const { blogs } = useGetAllBlogs();
 
   // const date = new Date(blogs.createdAt);
   return (
     <>
-      {blogs.map((blog: any) => (
+      {blogs.map((blog: IBlog) => (
         <Card className="w-full rounded-2xl shadow-md" key={blog._id}>
           <CardHeader>
             <Image
