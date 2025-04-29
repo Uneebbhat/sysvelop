@@ -4,11 +4,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   req: NextRequest,
-  context: { params: { blogId: string } }
+  { params }: { params: { blogId: string } }
 ) {
   await dbConnect();
 
-  const blogId = context.params.blogId;
+  const blogId = params.blogId;
 
   try {
     const getBlogById = await Blog.findOne({ _id: blogId });
