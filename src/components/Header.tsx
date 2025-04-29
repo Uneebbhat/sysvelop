@@ -32,13 +32,13 @@ const Header: FC = () => {
       label: "Portfolio",
       href: "/portfolio",
     },
+    // {
+    //   id: 4,
+    //   label: "Blogs",
+    //   href: "/blogs",
+    // },
     {
       id: 4,
-      label: "Blogs",
-      href: "/blogs",
-    },
-    {
-      id: 5,
       label: "Contact",
       href: "/contact",
     },
