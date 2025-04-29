@@ -2,7 +2,7 @@ import mongoose, { Document, Schema, Types } from "mongoose";
 
 interface IBlog extends Document {
   authorId: Types.ObjectId;
-  image?: File | any | string;
+  image?: File | string;
   title: string;
   tags: string[];
   description: string;

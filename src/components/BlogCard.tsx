@@ -21,9 +21,8 @@ interface IBlog {
   tags: string[];
   description: string;
   content: string;
-  createdAt: Date;
+  createdAt: Date | string;
 }
-[];
 
 const BlogCard = () => {
   const { blogs } = useGetAllBlogs();
