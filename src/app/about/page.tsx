@@ -3,7 +3,7 @@ import Button from "@/components/ui/button";
 export default function About() {
   return (
     <>
-      <section className="p-[20px] md:p-[80px] about-main">
+      <section className="py-20 md:py-32 px-5 about-main">
         <div className="container mx-auto relative z-10 flex items-center justify-center min-h-[400px]">
           <div className="backdrop-blur-md bg-white/10 border border-white/30 rounded-2xl p-10 max-w-3xl text-center shadow-xl">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -13,12 +13,17 @@ export default function About() {
               We transform bold ideas into impactful digital experiences. Your
               vision, engineered to scale.
             </p>
-            <Button className="primary mx-auto">Learn More</Button>
+            <a href="#who-we-are">
+              <Button className="primary mx-auto">Learn More</Button>
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="p-[20px] md:p-[80px] bg-[#F6F6F6]">
+      <section
+        className="py-16 px-[20px] md:p-[80px] bg-[#F6F6F6]"
+        id="who-we-are"
+      >
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-6">Who We Are</h2>
           <p className="text-gray-600 leading-relaxed">
@@ -30,7 +35,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="p-[20px] md:p-[80px]">
+      <section className="py-16 px-[20px] md:p-[80px]">
         <div className="container mx-auto grid md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
@@ -50,7 +55,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="p-[20px] md:p-[80px] bg-[#F6F6F6]">
+      <section className="py-16 px-[20px] md:p-[80px] bg-[#F6F6F6]">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-10">Our Core Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
@@ -77,7 +82,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="p-[20px] md:p-[80px]">
+      <section className="py-16 px-[20px] md:p-[80px]">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-10">What Our Clients Say</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -107,7 +112,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="p-[20px] md:p-[80px] bg-blue-600 text-white text-center">
+      <section className="py-16 px-[20px] md:p-[80px] bg-blue-600 text-white text-center">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-4">
             Let&apos;s Build Something Great Together

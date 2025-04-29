@@ -112,6 +112,10 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -173,7 +177,6 @@
   position: relative;
   background-image: url("/about-main.jpg");
   width: 100%;
-  height: 100dvh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

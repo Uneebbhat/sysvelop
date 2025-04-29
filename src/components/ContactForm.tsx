@@ -47,28 +47,27 @@ const formSchema = z.object({
 });
 
 const ContactForm = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      budget: "",
-      services: [],
-      details: "",
-    },
-  });
+  // const form = useForm<z.infer<typeof formSchema>>({
+  //   resolver: zodResolver(formSchema),
+  //   defaultValues: {
+  //     name: "",
+  //     email: "",
+  //     phone: "",
+  //     budget: "",
+  //     services: [],
+  //     details: "",
+  //   },
+  // });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-  };
+  // const onSubmit = (values: z.infer<typeof formSchema>) => {
+  //   console.log(values);
+  // };
 
   return (
     <>
       <div className="container mx-auto max-w-2xl p-4">
-        <Form {...form}>
+        {/* <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            {/* Name */}
             <FormField
               control={form.control}
               name="name"
@@ -83,7 +82,6 @@ const ContactForm = () => {
               )}
             />
 
-            {/* Email */}
             <FormField
               control={form.control}
               name="email"
@@ -102,7 +100,6 @@ const ContactForm = () => {
               )}
             />
 
-            {/* Phone */}
             <FormField
               control={form.control}
               name="phone"
@@ -117,7 +114,6 @@ const ContactForm = () => {
               )}
             />
 
-            {/* Budget Dropdown */}
             <FormField
               control={form.control}
               name="budget"
@@ -144,7 +140,6 @@ const ContactForm = () => {
               )}
             />
 
-            {/* Services (Checkbox group) */}
             <FormField
               control={form.control}
               name="services"
@@ -194,7 +189,6 @@ const ContactForm = () => {
               )}
             />
 
-            {/* Project Details */}
             <FormField
               control={form.control}
               name="details"
@@ -213,12 +207,15 @@ const ContactForm = () => {
               )}
             />
 
-            {/* Submit */}
             <Button type="submit" className="primary w-full">
               Submit Project
             </Button>
           </form>
-        </Form>
+        </Form> */}
+        <iframe
+          className="w-full h-[1200px] p-0"
+          src="https://erpcrm.sysvelop.com/2048/forms/ticket"
+        ></iframe>
       </div>
     </>
   );

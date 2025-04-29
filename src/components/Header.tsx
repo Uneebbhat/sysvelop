@@ -37,11 +37,16 @@ const Header: FC = () => {
       label: "Blogs",
       href: "/blogs",
     },
+    {
+      id: 5,
+      label: "Contact",
+      href: "/contact",
+    },
   ];
 
   return (
     <>
-      <header className="py-[24px] px-[20px] shadow-sm">
+      <header className="py-[24px] px-[20px] shadow-sm sticky top-0 z-20 bg-white/30 backdrop-blur-md border border-white/30 rounded-md">
         <Container>
           <div className="flex items-center justify-between">
             <div>
@@ -111,7 +116,9 @@ const Header: FC = () => {
             </nav>
 
             <div className="hidden md:block">
-              <Button className="primary">Let&apos;s talk.</Button>
+              <a href="/contact">
+                <Button className="primary">Let&apos;s talk.</Button>
+              </a>
             </div>
           </div>
         </Container>

@@ -1,34 +1,44 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import useGetBlogById from "@/hooks/useGetBlogById";
+import Loading from "../loading";
+
+// Define proper types for the blog
+interface Blog {
+  _id: string;
+  title: string;
+  content: string;
+  description: string;
+  createdAt: string;
+  author?: string;
+  tags?: string[];
+  date?: string;
+}
 
 const BlogDetail = () => {
-  const blog = {
-    id: 1,
-    title: "Mastering Full-Stack Development with TypeScript",
-    date: "April 25, 2025",
-    author: "Uneeb Bhatti",
-    image: "/web.png",
-    tags: ["TypeScript", "Full-Stack", "Web Development"],
-    content: `
-      In the ever-evolving world of software development, staying updated with modern tools and frameworks is essential...
-      TypeScript offers powerful features such as static typing, interfaces, and strong tooling which make it ideal for both frontend and backend.
-      
-      On the backend, using TypeScript with Node.js and Express improves code reliability and maintainability. On the frontend, frameworks like React and Next.js leverage TypeScript to provide a more robust developer experience.
-      
-      Building full-stack applications using a shared language across both client and server unlocks massive productivity benefits, especially in teams and growing codebases.
-      
-      This article dives into practical use-cases, architecture tips, and real-world examples to help you level up your full-stack development skills with TypeScript.
-    `,
-  };
+  const { blog } = useGetBlogById() as { blog: Blog };
+
+  // Add loading state handling
+  if (!blog) {
+    return (
+      <div className="p-5 md:p-20">
+        <div className="container mx-auto max-w-4xl">
+          <Loading />
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <section className="p-5 md:p-20">
+    <section className="py-16 px-[20px] md:p-[80px]">
       <div className="container mx-auto max-w-4xl">
         {/* Hero Image */}
         <div className="mb-10">
           <Image
-            src={blog.image}
-            alt={blog.title}
+            src={"/web.png"}
+            alt={blog.title || "Blog post image"}
             width={1200}
             height={600}
             className="rounded-xl w-full h-[300px] object-cover"
@@ -37,8 +47,15 @@ const BlogDetail = () => {
 
         {/* Meta Info */}
         <div className="mb-6 text-sm text-muted-foreground flex flex-wrap justify-between items-center">
-          <span>{blog.date}</span>
-          <span>By {blog.author}</span>
+          <span>
+            {blog.createdAt &&
+              new Date(blog.createdAt).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+          </span>
+          {blog.author && <span>By {blog.author}</span>}
         </div>
 
         {/* Title */}
@@ -47,21 +64,23 @@ const BlogDetail = () => {
         </h1>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {blog.tags.map((tag, index) => (
-            <span
-              key={index}
-              className="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full"
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>
+        {blog.tags && blog.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-8">
+            {blog.tags.map((tag: string, index: number) => (
+              <span
+                key={`tag-${index}`}
+                className="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* Content */}
         <div className="prose max-w-none text-gray-800 leading-relaxed prose-p:mb-4">
-          {blog.content.split("\n").map((para, index) => (
-            <p key={index}>{para.trim()}</p>
+          {blog.content.split("\n").map((para: string, index: number) => (
+            <p key={`para-${index}`}>{para.trim()}</p>
           ))}
         </div>
       </div>
