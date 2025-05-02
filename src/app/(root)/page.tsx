@@ -10,6 +10,7 @@ import { Check, Clock, FileText, Menu, Plus, Repeat } from "lucide-react";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import PartnersSlider from "@/components/PartnersSlider";
 import Link from "next/link";
+import { NumberTicker } from "@/components/magicui/number-ticker";
 
 const iconMap: Record<string, JSX.Element> = {
   checkmark: <Check className="w-10 h-10" />,
@@ -107,21 +108,27 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 text-center gap-[40px]">
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-                <span className="text-blue-500">50+</span>
+                <span className="text-blue-500">
+                  <NumberTicker value={50} className="text-blue-500" />+
+                </span>
                 <br />
                 <span>projects</span>
               </h2>
             </div>
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-                <span className="text-blue-500">4+</span>
+                <span className="text-blue-500">
+                  <NumberTicker value={4} className="text-blue-500" />+
+                </span>
                 <br />
                 <span>countries</span>
               </h2>
             </div>
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-                <span className="text-blue-500">20+</span>
+                <span className="text-blue-500">
+                  <NumberTicker value={20} className="text-blue-500" />+
+                </span>
                 <br />
                 <span>clients</span>
               </h2>
@@ -227,10 +234,6 @@ export default function Home() {
                 <p className="text-gray-700 text-base mb-6">
                   &quot;{testimonial.quote}&quot;
                 </p>
-                <div className="text-sm font-medium text-gray-900">
-                  {testimonial.name}
-                </div>
-                <div className="text-sm text-gray-500">{testimonial.role}</div>
               </div>
             ))}
           </div>

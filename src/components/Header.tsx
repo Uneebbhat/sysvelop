@@ -116,9 +116,9 @@ const Header: FC = () => {
             </nav>
 
             <div className="hidden md:block">
-              <a href="/contact">
+              <Link href="/contact">
                 <Button className="primary">Let&apos;s talk.</Button>
-              </a>
+              </Link>
             </div>
           </div>
         </Container>

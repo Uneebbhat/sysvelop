@@ -82,36 +82,6 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-16 px-[20px] md:p-[80px]">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-10">What Our Clients Say</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                name: "Ali Khan",
-                role: "CEO, Cart Inc.",
-                feedback:
-                  "sysvelop transformed our operations with a scalable solution delivered on time and beyond expectations.",
-              },
-              {
-                name: "Fatima Rehman",
-                role: "Founder, MakkiTV",
-                feedback:
-                  "The communication, transparency, and delivery speed were exceptional. Highly recommended team.",
-              },
-            ].map((testimonial, i) => (
-              <div key={i} className="p-6 bg-white shadow rounded-xl">
-                <p className="text-gray-600 italic mb-4">
-                  &quot;{testimonial.feedback}&quot;
-                </p>
-                <h4 className="text-lg font-bold">{testimonial.name}</h4>
-                <p className="text-sm text-gray-500">{testimonial.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 px-[20px] md:p-[80px] bg-blue-600 text-white text-center">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-4">
