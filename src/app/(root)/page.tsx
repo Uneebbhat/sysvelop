@@ -8,7 +8,8 @@ import features from "@/data/features.json";
 import { JSX } from "react";
 import { Check, Clock, FileText, Menu, Plus, Repeat } from "lucide-react";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import ClientsSlider from "@/components/ClientsSlider";
+import PartnersSlider from "@/components/PartnersSlider";
+import Link from "next/link";
 
 const iconMap: Record<string, JSX.Element> = {
   checkmark: <Check className="w-10 h-10" />,
@@ -57,7 +58,7 @@ export default function Home() {
 
       <section id="clients" className="py-16 px-[20px] md:p-[80px]">
         <div className="container mx-auto">
-          <ClientsSlider />
+          <PartnersSlider />
         </div>
       </section>
 
@@ -98,7 +99,9 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <Button className="primary">Get in touch</Button>
+              <Link href={"/contact"}>
+                <Button className="primary">Get in touch</Button>
+              </Link>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 text-center gap-[40px]">
